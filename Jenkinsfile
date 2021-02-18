@@ -1,7 +1,6 @@
 node('nodejs') {
     stage('Checkout') {
-        git branch: 'main',
-            url: 'https://github.com/mabulgu/do400-pipelines-control'
+        checkout scm
     }
     stage('Backend Tests') {
         sh 'node ./backend/test.js'
